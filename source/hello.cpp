@@ -76,7 +76,22 @@ HelloApplication::HelloApplication(const Wt::WEnvironment& env)
   this->useStyleSheet("static/css/bootstrap.css");
   setTitle("Technofit");                         
   htmlTry = root()->addWidget(std::make_unique<Wt::WText>("",  Wt::TextFormat::UnsafeXHTML)); // show some text
-  htmlTry->setText(" <div class='container'>"
+  htmlTry->setText(  "<head>"
+   " <meta name='viewport' content='width=device-width' />"
+ " </head>"
+ " <body>"
+  "  <div class='wrapper'>"
+ "     <header class='container-fluid sticky-top'>"
+  "      <a class='logo' href='#'><img src='#' /></a>"
+   "     <ul class='headerul'>"
+     "     <li class='mt-3'><a class='headera' href='#'>Data recovery</a></li>"
+       "   <li class='mt-3'><a class='headera' href='#'>Archive</a></li>"
+       "   <li class='mt-3'><a class='headera' href='#'>Prediction</a></li>"
+       " </ul>"
+      "</header>"
+  
+          " <main>"
+          " <div class='container'>"
           "<div class='row'>"
           "  <div class='col-3'>"
              " <div class='card mb-4 rounded-3 shadow-sm'>"
@@ -148,9 +163,13 @@ HelloApplication::HelloApplication(const Wt::WEnvironment& env)
        "   </div>"
         
        " </div> "
-       " <div>"
-       "   <img class='chart' src='static/img/grafik.jpg' alt=''>"
-       " </div>  ");                           // give focus
+       "</main>"
+      "    <footer class='d-flex flex-wrap justify-content-between align-items-center py-3 border-top>"
+       " <div class='col-md-4 d-flex align-items-center'>"
+       "   <span class='mb-3 mb-md-0 text-muted'>© 2023 TechnoFit, Inc</span>"
+      " </div>"
+      "</footer>"
+          );                         
 
   // auto button = root()->addWidget(std::make_unique<Wt::WPushButton>('Greet me.'));
   //                                                     // create a button
